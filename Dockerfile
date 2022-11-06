@@ -60,7 +60,8 @@ COPY obsidian.AppImage /opt/
 ADD ./noVNC /opt/noVNC/
 
 RUN chmod 777 /opt/obsidian.AppImage && \
-	chmod 777 /opt/noVNC/utils/novnc_proxy
+	chmod 777 /opt/noVNC/utils/novnc_proxy && \
+	chmod 777 /opt/noVNC/utils/websockify/run
 
 # 创建脚本文件
 RUN echo "#!/bin/bash\n" > /root/startup.sh && \
@@ -85,7 +86,7 @@ RUN echo "#!/bin/bash\n" > /root/startup.sh && \
 RUN LANG=C xdg-user-dirs-update --force
 
 # 导出特定端口
-EXPOSE 22 5900 3389 6001 6002 6003 6004 6005 6006 6007 6008 6009
+EXPOSE 22 5900 6080 6090 8500 8501 27123 27124 
 
 # 启动脚本
 CMD ["/root/startup.sh"]
