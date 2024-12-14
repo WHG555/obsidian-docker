@@ -1,5 +1,5 @@
 # 说明  
-说明::本镜像是一个将obsidian，安装在一个有桌面的docker系统。使用这个镜像，可以将obsidian嵌入到网页当中，进行使用。
+说明::本镜像是一个将obsidian，安装在一个有桌面的docker系统。使用这个镜像，可以将obsidian嵌入到网页当中，进行使用。支持中文展示与中文输入。
 # 简单使用
 下载运行镜像
 > docker run -p 6818:6090 --device /dev/fuse --privileged hcyxsmile/obsidian-docker:v1.0
